@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tango Korea</title>
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#ffffff" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    body, h1, h2, h3, h4, h5, h6, button, input, select, textarea {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    #root {
+      max-width: 450px;
+      margin: 0 auto;
+      min-height: 100vh;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+      position: relative;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+    .highlight-post {
+      animation: highlight-animation 3s ease-in-out;
+      border-radius: 1rem; /* same as PostCard */
+    }
+    @keyframes highlight-animation {
+      0% {
+        background-color: transparent;
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+      }
+      20% {
+        background-color: rgba(59, 130, 246, 0.1);
+        box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+      }
+      80% {
+        background-color: rgba(59, 130, 246, 0.1);
+        box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+      }
+      100% {
+        background-color: transparent;
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+      }
+    }
+    @keyframes fade-in-out {
+      0%, 100% { 
+        opacity: 0; 
+        transform: translate(-50%, 10px); 
+      }
+      10%, 90% { 
+        opacity: 1; 
+        transform: translate(-50%, 0); 
+      }
+    }
+    .animate-toast {
+      animation: fade-in-out 2s ease-in-out forwards;
+    }
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .animate-fade-in {
+      animation: fade-in 0.2s ease-out forwards;
+    }
+    @keyframes scale-in {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .animate-scale-in {
+      animation: scale-in 0.2s ease-out forwards;
+    }
+    @keyframes slide-down-fade {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-slide-down-fade {
+      animation: slide-down-fade 0.5s ease-out forwards;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.19.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-gray-300">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
